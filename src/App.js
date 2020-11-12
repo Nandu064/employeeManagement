@@ -10,6 +10,8 @@ class App extends React.Component{
        {name:'Harish',age:23,salary:25000,designation:"Hr"},
        {name:'Prudhvi',age:23,salary:35000,designation:"Front-End Engineer"},
        {name:'Satish',age:35,salary:75000,designation:"Back-End Engineer"},
+       {name:'Kiran',age:30,salary:50000,designation:"DBA"},
+       {name:'Viswas',age:25,salary:70000,designation:"Manager"},
      ],
      updatedValue:{},
      adduser:true,
@@ -23,12 +25,12 @@ class App extends React.Component{
     this.setState({...this.state,adduser:false})
     this.setState({
       showModal:true,
-      hideModal:false
     })
     
   }
   handleModal = ()=>{
     this.setState({
+      adduser:true,
       showModal:false,
     })
   }
@@ -66,13 +68,13 @@ class App extends React.Component{
                 <Card style={{ width: '18rem',backgroundColor:'#c4c4c4' }} >
                 <Card.Body>
                   <Card.Text>
-                    <p>Name:{item.name} </p>
-                    <p>Age : {item.age} </p>
-                    <p>Salary : {item.salary} </p>
-                    <p>Designation : {item.designation} </p>
+                    <p style={{color:'white'}}>Name: {item.name}  </p>
+                    <p style={{color:'white'}}>Age : {item.age} </p>
+                    <p style={{color:'white'}}>Salary : {item.salary} </p>
+                    <p style={{color:'white'}}>Designation : {item.designation} </p>
                   </Card.Text>
-                  <Button variant="secondary" onClick={()=>this.upadateHandler(item,index)}>Edit</Button>
-                  <Button variant="danger" onClick={()=>this.deleteEmpHandler(index)}>Delete</Button>
+                  <Button variant="secondary" onClick={()=>this.upadateHandler(item,index)} style={{margin:'10px'}}>Edit</Button>
+                  <Button variant="danger" onClick={()=>this.deleteEmpHandler(index)} >Delete</Button>
                   {/* <button className="btn btn-success" onClick={()=>this.upadateHandler(item,index)}>Edit</button>
                   <button className="btn btn-danger" onClick={()=>this.deleteEmpHandler(index)}>Delete</button> */}
                 </Card.Body>
@@ -92,16 +94,13 @@ class App extends React.Component{
                     <span className="btn btn-primary" onClick={this.AddUserHandler}>Add Employee</span>
                     :<Add addEmp={this.AddEmpHandler} showModal={this.state.showModal} hideModal={this.handleModal} />
                     }
-                    {this.state.isUpdate?<Update showModal={this.state.showModal} 
+                    {this.state.isUpdate?<Update
                     name={this.state.updatedValue.name} 
-                    age={
-                      this.state.updatedValue.age
-                    } 
+                    age={this.state.updatedValue.age} 
                     salary={this.state.updatedValue.salary} 
                     designation={this.state.updatedValue.designation} 
                     id={this.state.updatedValue.id}
                     updateEmp={this.updateEmp}
-                    
                     />:null}
               </div>
             </div>
