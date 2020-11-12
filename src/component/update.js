@@ -63,7 +63,7 @@ const Update=(props)=>{
         </form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary"  onClick={(e)=>props.updateEmp(e,{name,age,salary,id:props.id})}>
+          <Button variant="secondary"  onClick={(e)=>props.updateEmp(e,{name,age,salary,designation,id:props.id})}>
             Update
           </Button>
                     
