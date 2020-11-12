@@ -1,4 +1,4 @@
-## Check this appp live at following link
+## Check this app live at following link
 
 https://nameless-meadow-86946.herokuapp.com
 
