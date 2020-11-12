@@ -73,8 +73,8 @@ class App extends React.Component{
     
     const listOfEmp=this.state.list.map((item,index)=>{
       return(
-            <div className="row" key={index} style={{margin:'10px',width:'18rem',display:'inline-block'}}>
-                <Card style={{ width: '18rem',backgroundColor:'#c4c4c4' }} >
+            <div className="row" key={index} style={{margin:'10px',width:'18rem',display:'inline-block',height:'45vh'}}>
+                <Card style={{ width: '18rem',backgroundColor:'#c4c4c4',height:'100%' }} >
                 <Card.Body>
                   <Card.Text>
                     <p style={{color:'white'}}>Name: {item.name}  </p>
