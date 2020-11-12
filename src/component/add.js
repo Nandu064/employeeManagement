@@ -27,19 +27,19 @@ const Add=(props)=>{
             <form>
                 <div className="form-row">
                 <div className="form-group">
-                    <label for="exampleInputEmail1">Name</label>
+                    <label>Name</label>
                     <input type="text" className="form-control" placeholder="Name" onChange={(e)=>setName(e.target.value)}/>
                 </div>
                 <div className="form-group">
-                    <label for="exampleInputEmail1">Age</label>
+                    <label>Age</label>
                     <input type="text" className="form-control" placeholder="Age" onChange={(e)=>setAge(e.target.value)}/>
                 </div>
                 <div className="form-group">
-                    <label for="exampleInputPassword1">Salary</label>
+                    <label>Salary</label>
                     <input type="text" className="form-control" placeholder="salary" onChange={(e)=>setSalary(e.target.value)}/>
                 </div>
                 <div className="form-group">
-                    <label for="exampleInputEmail1">Designation</label>
+                    <label>Designation</label>
                     <input type="email" className="form-control" placeholder="Designation" onChange={(e)=>setDesignation(e.target.value)}/>
                 </div> 
                 </div>

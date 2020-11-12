@@ -17,7 +17,7 @@ class App extends React.Component{
      adduser:true,
      isUpdate:false,
      showModal:'',
-     hideModal:''
+     showModal1:'',
   }
   
  
@@ -32,6 +32,12 @@ class App extends React.Component{
     this.setState({
       adduser:true,
       showModal:false,
+    })
+  }
+  handleModal1 = ()=>{
+    this.setState({
+      adduser:true,
+      showModal1:false,
     })
   }
 
@@ -51,6 +57,9 @@ class App extends React.Component{
   upadateHandler=(item,index)=>{
     let obj={...item,id:index}
     this.setState({isUpdate:true,updatedValue:obj})
+    this.setState({
+      showModal1:true,
+    })
   }
 
   updateEmp=(e,value)=>{
@@ -94,7 +103,7 @@ class App extends React.Component{
                     <span className="btn btn-primary" onClick={this.AddUserHandler}>Add Employee</span>
                     :<Add addEmp={this.AddEmpHandler} showModal={this.state.showModal} hideModal={this.handleModal} />
                     }
-                    {this.state.isUpdate?<Update
+                    {this.state.isUpdate?<Update showModal1={this.state.showModal1} hideModal={this.handleModal1}
                     name={this.state.updatedValue.name} 
                     age={this.state.updatedValue.age} 
                     salary={this.state.updatedValue.salary} 
