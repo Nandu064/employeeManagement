@@ -7,11 +7,11 @@ class App extends React.Component{
 
   state={
      list:[
-       {name:'Harish',age:23,salary:25000,designation:"Hr"},
-       {name:'Prudhvi',age:23,salary:35000,designation:"Front-End Engineer"},
-       {name:'Satish',age:35,salary:75000,designation:"Back-End Engineer"},
-       {name:'Kiran',age:30,salary:50000,designation:"DBA"},
-       {name:'Viswas',age:25,salary:70000,designation:"Manager"},
+       {name:'Harish',age:23,salary:25000,designation:"Hr",address:"1-102,Near Ramalayam,Kurnool Nandyal"},
+       {name:'Prudhvi',age:23,salary:35000,designation:"Front-End Engineer",address:"1-102,Near Ramalayam,Kurnool Nandyal"},
+       {name:'Satish',age:35,salary:75000,designation:"Back-End Engineer",address:"1-102,Near Ramalayam,Kurnool Nandyal"},
+       {name:'Kiran',age:30,salary:50000,designation:"DBA",address:"1-102,Near Ramalayam,Kurnool Nandyal"},
+       {name:'Viswas',age:25,salary:70000,designation:"Manager",address:"1-102,Near Ramalayam,Kurnool Nandyal"},
      ],
      updatedValue:{},
      adduser:true,
@@ -44,7 +44,7 @@ class App extends React.Component{
   AddEmpHandler=(e,value)=>{
     e.preventDefault();
     let oldEmp=this.state.list;
-    oldEmp.push({name:value.name,age:value.age,salary:value.salary,designation:value.designation})
+    oldEmp.push({name:value.name,age:value.age,salary:value.salary,designation:value.designation,address:value.address})
     this.setState({list:oldEmp,adduser:true})
   }
 
@@ -65,7 +65,7 @@ class App extends React.Component{
   updateEmp=(e,value)=>{
     e.preventDefault();
     let oldEmp=this.state.list;
-    oldEmp.splice(value.id,1,{name:value.name,age:value.age,salary:value.salary,designation:value.designation})
+    oldEmp.splice(value.id,1,{name:value.name,age:value.age,salary:value.salary,designation:value.designation,address:value.address})
     this.setState({list:oldEmp,isUpdate:false})
   }
 
@@ -81,6 +81,7 @@ class App extends React.Component{
                     <p style={{color:'white'}}>Age : {item.age} </p>
                     <p style={{color:'white'}}>Salary : {item.salary} </p>
                     <p style={{color:'white'}}>Designation : {item.designation} </p>
+                    <p style={{color:'white'}}>Address : {item.address} </p>
                   </Card.Text>
                   <Button variant="secondary" onClick={()=>this.upadateHandler(item,index)} style={{margin:'10px'}}>Edit</Button>
                   <Button variant="danger" onClick={()=>this.deleteEmpHandler(index)} >Delete</Button>
@@ -108,6 +109,7 @@ class App extends React.Component{
                     age={this.state.updatedValue.age} 
                     salary={this.state.updatedValue.salary} 
                     designation={this.state.updatedValue.designation} 
+                    address={this.state.updatedValue.address} 
                     id={this.state.updatedValue.id}
                     updateEmp={this.updateEmp}
                     />:null}
