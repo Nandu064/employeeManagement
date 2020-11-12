@@ -7,11 +7,11 @@ class App extends React.Component{
 
   state={
      list:[
-       {name:'Harish',age:23,salary:25000,designation:"Hr",address:"1-102,Near Ramalayam,Kurnool Nandyal"},
-       {name:'Prudhvi',age:23,salary:35000,designation:"Front-End Engineer",address:"1-102,Near Ramalayam,Kurnool Nandyal"},
-       {name:'Satish',age:35,salary:75000,designation:"Back-End Engineer",address:"1-102,Near Ramalayam,Kurnool Nandyal"},
-       {name:'Kiran',age:30,salary:50000,designation:"DBA",address:"1-102,Near Ramalayam,Kurnool Nandyal"},
-       {name:'Viswas',age:25,salary:70000,designation:"Manager",address:"1-102,Near Ramalayam,Kurnool Nandyal"},
+       {name:'Harish',age:23,salary:25000,designation:"Hr",address:"1-102,Near Ramalayam,Kurnool,Andhra Pradesh"},
+       {name:'Prudhvi',age:23,salary:35000,designation:"Front-End Engineer",address:"2-23/45d,Near State Bank of India,Tirupathi,Andhra Pradesh"},
+       {name:'Satish',age:35,salary:75000,designation:"Back-End Engineer",address:"1-104/28C,Sri Keerthy Apartments,Thiruvananthapuram,Kerala"},
+       {name:'Kiran',age:30,salary:50000,designation:"DBA",address:"24/5A,Sai Apartments,Near Gandhi Chowk,Chennai,TamilNadu"},
+       {name:'Viswas',age:25,salary:70000,designation:"Manager",address:"48B,Green Avenue Apartments,Hyderabad,Telangana"},
      ],
      updatedValue:{},
      adduser:true,
