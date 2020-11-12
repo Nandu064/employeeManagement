@@ -7,22 +7,30 @@ class App extends React.Component{
 
   state={
      list:[
-       {name:'ripon',age:23,salary:25000,designation:"Hr"},
-       {name:'Harish',age:23,salary:35000,designation:"Front-End Engineer"},
-       {name:'john',age:35,salary:75000,designation:"Back-End Engineer"},
+       {name:'Harish',age:23,salary:25000,designation:"Hr"},
+       {name:'Prudhvi',age:23,salary:35000,designation:"Front-End Engineer"},
+       {name:'Satish',age:35,salary:75000,designation:"Back-End Engineer"},
      ],
      updatedValue:{},
      adduser:true,
      isUpdate:false,
-     setShow:false
+     showModal:'',
+     hideModal:''
   }
   
-  handleShow = () => {
+ 
+  AddUserHandler=()=>{
+    this.setState({...this.state,adduser:false})
+    this.setState({
+      showModal:true,
+      hideModal:false
+    })
     
   }
-  AddUserHandler=()=>{
-    this.setState({...this.state,adduser:false,setShow:true})
-    
+  handleModal = ()=>{
+    this.setState({
+      showModal:false,
+    })
   }
 
   AddEmpHandler=(e,value)=>{
@@ -54,8 +62,8 @@ class App extends React.Component{
     
     const listOfEmp=this.state.list.map((item,index)=>{
       return(
-            <div className="row" key={index} style={{margin:'10px'}}>
-                <Card style={{ width: '300rem' }}>
+            <div className="row" key={index} style={{margin:'10px',width:'18rem',display:'inline-block'}}>
+                <Card style={{ width: '18rem',backgroundColor:'#c4c4c4' }} >
                 <Card.Body>
                   <Card.Text>
                     <p>Name:{item.name} </p>
@@ -81,10 +89,10 @@ class App extends React.Component{
             <div className="row mt-4">
               <div className="col-sm-12">
                     {this.state.adduser?
-                    <span className="btn btn-primary" onClick={this.AddUserHandler}>Add EMP</span>
-                    :<Add addEmp={this.AddEmpHandler}/>
+                    <span className="btn btn-primary" onClick={this.AddUserHandler}>Add Employee</span>
+                    :<Add addEmp={this.AddEmpHandler} showModal={this.state.showModal} hideModal={this.handleModal} />
                     }
-                    {this.state.isUpdate?<Update 
+                    {this.state.isUpdate?<Update showModal={this.state.showModal} 
                     name={this.state.updatedValue.name} 
                     age={
                       this.state.updatedValue.age
@@ -93,6 +101,7 @@ class App extends React.Component{
                     designation={this.state.updatedValue.designation} 
                     id={this.state.updatedValue.id}
                     updateEmp={this.updateEmp}
+                    
                     />:null}
               </div>
             </div>

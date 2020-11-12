@@ -18,22 +18,23 @@ const Update=(props)=>{
 
     return(
         <form>
-            <div className="form-row">
-                <div className="col">
-                   <input type="text" className="form-control" placeholder="Name" value={name} onChange={(e)=>setName(e.target.value)}/>
-                </div>
-                <div className="col">
-                   <input type="text" className="form-control" placeholder="age" value={age} onChange={(e)=>setAge(e.target.value)}/>
-                </div>
-                <div className="col">
-                   <input type="text" className="form-control" placeholder="salary" value={salary} onChange={(e)=>setSalary(e.target.value)}/>
-                </div>
-                <div className="col">
-                   <input type="text" className="form-control" placeholder="Designation" value={designation} onChange={(e)=>setDesignation(e.target.value)}/>
-                </div>
+        <div className="form-row">
+            <div className="col">
+                <input type="text" className="form-control" placeholder="Name" value={name} onChange={(e)=>setName(e.target.value)}/>
             </div>
-            <button onClick={(e)=>props.updateEmp(e,{name,age,salary,designation,id:props.id})}>Update</button>
-        </form>
+            <div className="col">
+                <input type="text" className="form-control" placeholder="age" value={age} onChange={(e)=>setAge(e.target.value)}/>
+            </div>            
+            <div className="col">
+                <input type="text" className="form-control" placeholder="salary" value={salary} onChange={(e)=>setSalary(e.target.value)}/>
+            </div>
+            <div className="col">
+                <input type="text" className="form-control" placeholder="Designation" value={designation} onChange={(e)=>setDesignation(e.target.value)}/>
+            </div>
+        </div>
+        <button onClick={(e)=>props.updateEmp(e,{name,age,salary,id:props.id})}>update</button>
+    </form>
+        
     )
 }
 

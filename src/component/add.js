@@ -9,22 +9,17 @@ const Add=(props)=>{
      const [salary,setSalary]=useState('');
      const [designation,setDesignation]=useState('');
 
-     const [showModal, setShow] = useState(false);
-
-     const handleClose = () => setShow(false);
-     const handleShow = () => setShow(true);
-
     return(
         <>
-      <div
+      {/* <div
         className="d-flex align-items-center justify-content-center"
         style={{ height: "100vh" }}
       >
         <Button variant="primary" onClick={handleShow}>
           Add Employee
         </Button>
-      </div>
-      <Modal show={showModal} onHide={handleClose}>
+      </div> */}
+      <Modal show={props.showModal} onHide={props.hideModal}>
         <Modal.Header closeButton>
           <Modal.Title>Add Employee</Modal.Title>
         </Modal.Header>
@@ -52,7 +47,7 @@ const Add=(props)=>{
             </form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+          <Button variant="secondary" onClick={props.hideModal}>
             Close
           </Button>
           <Button variant="primary" onClick={(e)=>props.addEmp(e,{name,age,salary,designation})}>
