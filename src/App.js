@@ -105,6 +105,7 @@ class App extends React.Component{
                     :<Add addEmp={this.AddEmpHandler} showModal={this.state.showModal} hideModal={this.handleModal} />
                     }
                     {this.state.isUpdate?<Update showModal1={this.state.showModal1} hideModal={this.handleModal1}
+                    key={this.state.updatedValue.id}
                     name={this.state.updatedValue.name} 
                     age={this.state.updatedValue.age} 
                     salary={this.state.updatedValue.salary} 
