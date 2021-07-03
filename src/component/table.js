@@ -5,11 +5,12 @@ import paginationFactory from 'react-bootstrap-table2-paginator';
 
 
 function table(props) {
-    
+    // destructuring of props
     let {playerData,upadateHandler} = props
     
 
     const paginateData = playerData;
+    // assigning column headings
     const paginateColumns = [
         { dataField: 'no', text: 'No',headerStyle: { backgroundColor: '#215E95', color: 'white'} },
         { dataField: 'name', text: 'Name',headerStyle: { backgroundColor: '#215E95', color: 'white'} },
@@ -22,6 +23,7 @@ function table(props) {
         { dataField: 'assists', text: 'Assists',headerStyle: { backgroundColor: '#215E95', color: 'white'} },
         { dataField: 'freekickscored', text: 'Free Kicks Scored',headerStyle: { backgroundColor: '#215E95', color: 'white'} },
       ];
+      // Working with pagination
     const pagination = paginationFactory({
         page: 1,
         sizePerPage: 10,
@@ -33,6 +35,7 @@ function table(props) {
         showTotal:true,
         // hideSizePerPage: true,
       });
+      //Click on any row to get edit modal
       const rowEvent={
         onClick: (item, row, rowIndex) => {
             upadateHandler(playerData[rowIndex],rowIndex)

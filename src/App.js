@@ -1,7 +1,6 @@
 import React from 'react';
 import Add from './component/add';
 import Update from './component/update';
-// import {Card ,Button} from "react-bootstrap";
 import Display from './component/display';
 import {playerData} from './includes/dummyData'
 import Table from './component/table'
@@ -19,7 +18,7 @@ class App extends React.Component{
      btnText:'Card'
   }
   
- 
+ // Show Modal handler
   AddUserHandler=()=>{
     this.setState({...this.state,adduser:false})
     this.setState({
@@ -27,6 +26,7 @@ class App extends React.Component{
     })
     
   }
+  //hide Modal handlers
   handleModal = ()=>{
     this.setState({
       adduser:true,
@@ -39,20 +39,20 @@ class App extends React.Component{
       showModal1:false,
     })
   }
-
+  // Add handlers
   AddEmpHandler=(e,value)=>{
     e.preventDefault();
-    let oldEmp=this.state.list;
-    oldEmp.push({no:value.no,name:value.name,age:value.age,currentclub:value.currentclub,position:value.position,debutyear:value.debutyear,previousclub:value.previousclub,goals:value.goals,assists:value.assists,freekickscored:value.freekickscored})
-    this.setState({list:oldEmp,adduser:true})
+    let oldList=this.state.list;
+    oldList.push({no:value.no,name:value.name,age:value.age,currentclub:value.currentclub,position:value.position,debutyear:value.debutyear,previousclub:value.previousclub,goals:value.goals,assists:value.assists,freekickscored:value.freekickscored})
+    this.setState({list:oldList,adduser:true})
   }
-
+  // delete handler
   deleteEmpHandler=(index)=>{
-      let oldEmp=this.state.list;
-      oldEmp.splice(index,1);
-      this.setState({list:oldEmp})
+      let oldList=this.state.list;
+      oldList.splice(index,1);
+      this.setState({list:oldList})
   }
-
+  // Update handlers
   upadateHandler=(item,index)=>{
     let obj={...item,id:index}
     this.setState({isUpdate:true,updatedValue:obj})
@@ -63,9 +63,9 @@ class App extends React.Component{
 
   updateEmp=(e,value)=>{
     e.preventDefault();
-    let oldEmp=this.state.list;
-    oldEmp.splice(value.id,1,{no:value.no,name:value.name,age:value.age,currentclub:value.currentclub,position:value.position,debutyear:value.debutyear,previousclub:value.previousclub,goals:value.goals,assists:value.assists,freekickscored:value.freekickscored})
-    this.setState({list:oldEmp,isUpdate:false});console.log(this.state.updatedValue)
+    let oldList=this.state.list;
+    oldList.splice(value.id,1,{no:value.no,name:value.name,age:value.age,currentclub:value.currentclub,position:value.position,debutyear:value.debutyear,previousclub:value.previousclub,goals:value.goals,assists:value.assists,freekickscored:value.freekickscored})
+    this.setState({list:oldList,isUpdate:false});console.log(this.state.updatedValue)
   }
 
   render(){
@@ -82,6 +82,7 @@ class App extends React.Component{
               <div className="col-sm-12">
                     {this.state.adduser?
                     <span className="btn btn-success" onClick={this.AddUserHandler}>Add Player</span>
+                    // logic to handle addand update modals
                     :<Add addEmp={this.AddEmpHandler} playerData={this.state.list} showModal={this.state.showModal} hideModal={this.hideModal} />
                     }
                     {this.state.isUpdate?<Update showModal1={this.state.showModal1} hideModal={this.hideModal}

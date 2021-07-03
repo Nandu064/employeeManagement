@@ -20,7 +20,7 @@ function display({playerList,upadateHandler,deleteEmpHandler}) {
                     <p style={{color:'black'}}>Free Kicks Scored : {item.freekickscored} </p>
                   </Card.Text>
                   <Button variant="secondary" onClick={()=>upadateHandler(item,index)} style={{margin:'10px'}}>Edit</Button>
-                  <Button variant="danger" onClick={()=>deleteEmpHandler(index)}  >Delete</Button>
+                  <Button variant="danger" onClick={()=>deleteEmpHandler(index)}>Delete</Button>
                 </Card.Body>
               </Card>
             </div>)
